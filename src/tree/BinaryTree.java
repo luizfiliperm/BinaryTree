@@ -39,4 +39,34 @@ public class BinaryTree {
             }
         }
     }
+
+    public void remove(Integer num){
+        remove(root, num);
+    }
+
+    private void remove(Node node, Integer num){
+        if(node == null){
+            return;
+        }
+        if(num < node.getNum()){
+            remove(node.getLeft(), num);
+        }else if(num > node.getNum()){
+            remove(node.getRight(), num);
+        }else{
+            if(node.getLeft() == null && node.getRight() == null){
+                node = null;
+            }else if(node.getLeft() == null){
+                node = node.getRight();
+            }else if(node.getRight() == null){
+                node = node.getLeft();
+            }else{
+                Node temp = node.getRight();
+                while(temp.getLeft() != null){
+                    temp = temp.getLeft();
+                }
+                node.setNum(temp.getNum());
+                remove(node.getRight(), temp.getNum());
+            }
+        }
+    }
 }
