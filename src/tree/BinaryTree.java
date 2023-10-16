@@ -87,5 +87,16 @@ public class BinaryTree {
         }
     }
 
+    public void empty(){
+        empty(root);
+    }
 
+    private void empty(Node node){
+        if(node == null){
+            return;
+        }
+        empty(node.getLeft());
+        empty(node.getRight());
+        node = null;
+    }
 }
