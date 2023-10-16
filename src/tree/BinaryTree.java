@@ -69,4 +69,23 @@ public class BinaryTree {
             }
         }
     }
+
+    public Integer find(Integer num){
+        return find(root, num);
+    }
+
+    private Integer find(Node node, Integer num){
+        if(node == null){
+            return null;
+        }
+        if(num < node.getNum()){
+            return find(node.getLeft(), num);
+        }else if(num > node.getNum()){
+            return find(node.getRight(), num);
+        }else{
+            return node.getNum();
+        }
+    }
+
+
 }
