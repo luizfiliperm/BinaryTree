@@ -101,12 +101,17 @@ public class BinaryTree {
     }
 
     public void print(int order){
+        if(root == null){
+            System.out.println("Empty tree");
+            return;
+        }
         switch (order) {
             case 1 -> printPreOrder(root);
             case 2 -> printInOrder(root);
             case 3 -> printPostOrder(root);
             default -> System.out.println("Invalid order");
         }
+        System.out.println();
     }
 
     private void printPreOrder(Node node){
