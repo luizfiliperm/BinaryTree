@@ -99,4 +99,40 @@ public class BinaryTree {
         empty(node.getRight());
         node = null;
     }
+
+    public void print(int order){
+        switch (order) {
+            case 1 -> printPreOrder(root);
+            case 2 -> printInOrder(root);
+            case 3 -> printPostOrder(root);
+            default -> System.out.println("Invalid order");
+        }
+    }
+
+    private void printPreOrder(Node node){
+        if(node == null){
+            return;
+        }
+        System.out.print(node.getNum() + " ");
+        printPreOrder(node.getLeft());
+        printPreOrder(node.getRight());
+    }
+
+    private void printInOrder(Node node){
+        if(node == null){
+            return;
+        }
+        printInOrder(node.getLeft());
+        System.out.print(node.getNum() + " ");
+        printInOrder(node.getRight());
+    }
+
+    private void printPostOrder(Node node){
+        if(node == null){
+            return;
+        }
+        printPostOrder(node.getLeft());
+        printPostOrder(node.getRight());
+        System.out.print(node.getNum() + " ");
+    }
 }
