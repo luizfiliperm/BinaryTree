@@ -10,6 +10,10 @@ public class Node {
     public Node() {
     }
 
+    public Node(Integer num){
+        this.num = num;
+    }
+
     public Node(Node left, Integer num, Node right) {
         this.left = left;
         this.num = num;
