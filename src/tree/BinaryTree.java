@@ -40,8 +40,12 @@ public class BinaryTree {
         }
     }
 
-    public void remove(Integer num){
+    public boolean remove(Integer num){
+        if(root == null){
+            return false;
+        }
         remove(root, num);
+        return true;
     }
 
     private void remove(Node node, Integer num){

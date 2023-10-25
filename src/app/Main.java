@@ -14,7 +14,7 @@ public class Main {
         int option = sc.nextInt();
         sc.nextLine();
 
-        while (option != 5) {
+        while (option != 6) {
             switch (option) {
                 case 1 -> {
                     UI.printInsert();
@@ -27,8 +27,11 @@ public class Main {
                     UI.printRemove();
                     int num = sc.nextInt();
                     sc.nextLine();
-                    tree.remove(num);
-                    System.out.println("Removed Successfully");
+                    if(tree.remove(num)){
+                        System.out.println("Removed Successfully");
+                        break;
+                    }
+                    System.out.println("The number is not in the tree");
                 }
                 case 3 -> {
                     UI.printSearch();
@@ -46,6 +49,16 @@ public class Main {
                     int order = sc.nextInt();
                     sc.nextLine();
                     tree.print(order);
+                }
+                case 5 -> {
+                    UI.printEmpty();
+                    sc.nextLine();
+                    String answer = sc.nextLine().toLowerCase();
+                    if(answer.equals("y")){
+                        tree.empty();
+                        System.out.println("Emptied Successfully");
+                        break;
+                    }
                 }
                 default -> System.out.println("Invalid option");
             }
