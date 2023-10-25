@@ -11,7 +11,8 @@ public class UI {
         System.out.println("2. Remove");
         System.out.println("3. Search");
         System.out.println("4. Print");
-        System.out.println("5. Exit");
+        System.out.println("5. Empty");
+        System.out.println("6. Exit");
         System.out.print("Please select an option: ");
     }
 
@@ -25,6 +26,10 @@ public class UI {
 
     public static void printSearch(){
         System.out.print("Please enter a number to search: ");
+    }
+
+    public static void printEmpty(){
+        System.out.println("Are you sure you want to empty the tree?[y/n] ");
     }
 
     public static void printPrint(){
